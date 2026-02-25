@@ -1,0 +1,178 @@
+Matrice de Capacité:
+[0, 31, 25, 27, 0, 0]
+[0, 0, 20, 0, 12, 0]
+[0, 0, 0, 30, 6, 0]
+[0, 0, 0, 0, 0, 35]
+[0, 0, 0, 0, 0, 11]
+[0, 0, 0, 0, 0, 0]
+
+
+Matrice de coût:
+   [0, 8, 4, 15, 0, 0]
+   [0, 0, 7, 0, 16, 0]
+   [0, 0, 0, 8, 3, 0]
+   [0, 0, 0, 0, 0, 20]
+   [0, 0, 0, 0, 0, 14]
+   [0, 0, 0, 0, 0, 0]
+
+Source=0, Sink=5
+
+Le parcours en largeur :
+s
+abc ; Π(a) = s; Π(b) = s; Π(c) = s
+bcd ; Π(d) = a
+dt ; Π(t) = c
+
+
+Iteration 1:
+Chaine ameliorante: sct de flot 27
+Modifications sur le graphe residuel:
+   s  a  b  c  d  t
+s [0, 31, 25, 0, 0, 0]
+a [0, 0, 20, 0, 12, 0]
+b [0, 0, 0, 30, 6, 0]
+c [27, 0, 0, 0, 0, 8]
+d [0, 0, 0, 0, 0, 11]
+t [0, 0, 0, 27, 0, 0]
+
+
+Le parcours en largeur :
+s
+ab ; Π(a) = s; Π(b) = s
+bd ; Π(d) = a
+dc ; Π(c) = b
+ct ; Π(t) = d
+
+
+Iteration 2:
+Chaine ameliorante: sadt de flot 11
+Modifications sur le graphe residuel:
+   s  a  b  c  d  t
+s [0, 20, 25, 0, 0, 0]
+a [11, 0, 20, 0, 1, 0]
+b [0, 0, 0, 30, 6, 0]
+c [27, 0, 0, 0, 0, 8]
+d [0, 11, 0, 0, 0, 0]
+t [0, 0, 0, 27, 11, 0]
+
+
+Le parcours en largeur :
+s
+ab ; Π(a) = s; Π(b) = s
+bd ; Π(d) = a
+dc ; Π(c) = b
+t ; Π(t) = c
+
+
+Iteration 3:
+Chaine ameliorante: sbct de flot 8
+Modifications sur le graphe residuel:
+   s  a  b  c  d  t
+s [0, 20, 17, 0, 0, 0]
+a [11, 0, 20, 0, 1, 0]
+b [8, 0, 0, 22, 6, 0]
+c [27, 0, 8, 0, 0, 0]
+d [0, 11, 0, 0, 0, 0]
+t [0, 0, 0, 35, 11, 0]
+
+
+Le parcours en largeur :
+s
+ab ; Π(a) = s; Π(b) = s
+bd ; Π(d) = a
+dc ; Π(c) = b
+Flot max possible = 46
+
+Entrez flot désiré (1..46): 
+--- Calcul pour flot = 46 ---
+
+--- Itération #1: flot=0, coût=0 ---
+=== Bellman-Ford ===
+Iter |      0      1      2      3      4      5
+------------------------------------------------
+   0 |      0      ∞      ∞      ∞      ∞      ∞
+     |      -      -      -      -      -      -
+   1 |      0      8      4     12      7     21
+     |      -      0      0      2      2      4
+   2 |      0      8      4     12      7     21
+     |      -      0      0      2      2      4
+   3 |      0      8      4     12      7     21
+     |      -      0      0      2      2      4
+   4 |      0      8      4     12      7     21
+     |      -      0      0      2      2      4
+   5 |      0      8      4     12      7     21
+     |      -      0      0      2      2      4
+Chemin trouvé: [0, 2, 4, 5] (coût = 21)
+Chaîne: [0, 2, 4, 5], delta=6, coût unitaire=21
+
+--- Itération #2: flot=6, coût=126 ---
+=== Bellman-Ford ===
+Iter |      0      1      2      3      4      5
+------------------------------------------------
+   0 |      0      ∞      ∞      ∞      ∞      ∞
+     |      -      -      -      -      -      -
+   1 |      0      8      4     12     18     32
+     |      -      0      0      2      5      3
+   2 |      0      8      4     12     18     32
+     |      -      0      0      2      5      3
+   3 |      0      8      4     12     18     32
+     |      -      0      0      2      5      3
+   4 |      0      8      4     12     18     32
+     |      -      0      0      2      5      3
+   5 |      0      8      4     12     18     32
+     |      -      0      0      2      5      3
+Chemin trouvé: [0, 2, 3, 5] (coût = 32)
+Chaîne: [0, 2, 3, 5], delta=19, coût unitaire=32
+
+--- Itération #3: flot=25, coût=734 ---
+=== Bellman-Ford ===
+Iter |      0      1      2      3      4      5
+------------------------------------------------
+   0 |      0      ∞      ∞      ∞      ∞      ∞
+     |      -      -      -      -      -      -
+   1 |      0      8      7     15     21     35
+     |      -      0      3      0      5      3
+   2 |      0      8      7     15     21     35
+     |      -      0      3      0      5      3
+   3 |      0      8      7     15     21     35
+     |      -      0      3      0      5      3
+   4 |      0      8      7     15     21     35
+     |      -      0      3      0      5      3
+   5 |      0      8      7     15     21     35
+     |      -      0      3      0      5      3
+Chemin trouvé: [0, 3, 5] (coût = 35)
+Chaîne: [0, 3, 5], delta=16, coût unitaire=35
+
+--- Itération #4: flot=41, coût=1294 ---
+=== Bellman-Ford ===
+Iter |      0      1      2      3      4      5
+------------------------------------------------
+   0 |      0      ∞      ∞      ∞      ∞      ∞
+     |      -      -      -      -      -      -
+   1 |      0      8      7     15     24     38
+     |      -      0      3      0      1      4
+   2 |      0      8      7     15     24     38
+     |      -      0      3      0      1      4
+   3 |      0      8      7     15     24     38
+     |      -      0      3      0      1      4
+   4 |      0      8      7     15     24     38
+     |      -      0      3      0      1      4
+   5 |      0      8      7     15     24     38
+     |      -      0      3      0      1      4
+Chemin trouvé: [0, 1, 4, 5] (coût = 38)
+Chaîne: [0, 1, 4, 5], delta=5, coût unitaire=38
+
+=== Résultat final ===
+Flot total obtenu = 46
+Coût total minimal = 1484
+
+Flux arc (f/c; coût_unitaire):
+ 0->1: (5/31; 8)
+ 0->2: (25/25; 4)
+ 0->3: (16/27; 15)
+ 1->2: (0/20; 7)
+ 1->4: (5/12; 16)
+ 2->3: (19/30; 8)
+ 2->4: (6/6; 3)
+ 3->5: (35/35; 20)
+ 4->5: (11/11; 14)

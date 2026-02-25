@@ -1,0 +1,106 @@
+Matrice de Capacité:
+[0, 5, 0, 9, 0, 0, 0, 0]
+[0, 0, 7, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 4, 3, 0, 0]
+[0, 0, 4, 0, 0, 6, 5, 0]
+[0, 0, 0, 0, 0, 6, 0, 6]
+[0, 0, 0, 0, 0, 0, 0, 5]
+[0, 0, 0, 0, 0, 0, 0, 7]
+[0, 0, 0, 0, 0, 0, 0, 0]
+
+
+Le parcours en largeur :
+s
+ac ; Π(a) = s; Π(c) = s
+cb ; Π(b) = a
+bef ; Π(e) = c; Π(f) = c
+efd ; Π(d) = b
+fdt ; Π(t) = e
+
+
+Iteration 1:
+Chaine ameliorante: scet de flot 5
+Modifications sur le graphe residuel:
+   s  a  b  c  d  e  f  t
+s [0, 5, 0, 4, 0, 0, 0, 0]
+a [0, 0, 7, 0, 0, 0, 0, 0]
+b [0, 0, 0, 0, 4, 3, 0, 0]
+c [5, 0, 4, 0, 0, 1, 5, 0]
+d [0, 0, 0, 0, 0, 6, 0, 6]
+e [0, 0, 0, 5, 0, 0, 0, 0]
+f [0, 0, 0, 0, 0, 0, 0, 7]
+t [0, 0, 0, 0, 0, 5, 0, 0]
+
+
+Le parcours en largeur :
+s
+ac ; Π(a) = s; Π(c) = s
+cb ; Π(b) = a
+bef ; Π(e) = c; Π(f) = c
+efd ; Π(d) = b
+dt ; Π(t) = f
+
+
+Iteration 2:
+Chaine ameliorante: scft de flot 4
+Modifications sur le graphe residuel:
+   s  a  b  c  d  e  f  t
+s [0, 5, 0, 0, 0, 0, 0, 0]
+a [0, 0, 7, 0, 0, 0, 0, 0]
+b [0, 0, 0, 0, 4, 3, 0, 0]
+c [9, 0, 4, 0, 0, 1, 1, 0]
+d [0, 0, 0, 0, 0, 6, 0, 6]
+e [0, 0, 0, 5, 0, 0, 0, 0]
+f [0, 0, 0, 4, 0, 0, 0, 3]
+t [0, 0, 0, 0, 0, 5, 4, 0]
+
+
+Le parcours en largeur :
+s
+a ; Π(a) = s
+b ; Π(b) = a
+de ; Π(d) = b; Π(e) = b
+et ; Π(t) = d
+
+
+Iteration 3:
+Chaine ameliorante: sabdt de flot 4
+Modifications sur le graphe residuel:
+   s  a  b  c  d  e  f  t
+s [0, 1, 0, 0, 0, 0, 0, 0]
+a [4, 0, 3, 0, 0, 0, 0, 0]
+b [0, 4, 0, 0, 0, 3, 0, 0]
+c [9, 0, 4, 0, 0, 1, 1, 0]
+d [0, 0, 4, 0, 0, 6, 0, 2]
+e [0, 0, 0, 5, 0, 0, 0, 0]
+f [0, 0, 0, 4, 0, 0, 0, 3]
+t [0, 0, 0, 0, 4, 5, 4, 0]
+
+
+Le parcours en largeur :
+s
+a ; Π(a) = s
+b ; Π(b) = a
+e ; Π(e) = b
+c ; Π(c) = e
+f ; Π(f) = c
+t ; Π(t) = f
+
+
+Iteration 4:
+Chaine ameliorante: sabecft de flot 1
+Modifications sur le graphe residuel:
+   s  a  b  c  d  e  f  t
+s [0, 0, 0, 0, 0, 0, 0, 0]
+a [5, 0, 2, 0, 0, 0, 0, 0]
+b [0, 5, 0, 0, 0, 2, 0, 0]
+c [9, 0, 4, 0, 0, 2, 0, 0]
+d [0, 0, 4, 0, 0, 6, 0, 2]
+e [0, 0, 1, 4, 0, 0, 0, 0]
+f [0, 0, 0, 5, 0, 0, 0, 2]
+t [0, 0, 0, 0, 4, 5, 5, 0]
+
+
+Le parcours en largeur :
+s
+Flot maximal: 14

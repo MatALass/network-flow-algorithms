@@ -1,0 +1,74 @@
+Matrice de Capacité:
+[0, 31, 25, 27, 0, 0]
+[0, 0, 20, 0, 12, 0]
+[0, 0, 0, 30, 6, 0]
+[0, 0, 0, 0, 0, 35]
+[0, 0, 0, 0, 0, 11]
+[0, 0, 0, 0, 0, 0]
+
+
+Le parcours en largeur :
+s
+abc ; Π(a) = s; Π(b) = s; Π(c) = s
+bcd ; Π(d) = a
+dt ; Π(t) = c
+
+
+Iteration 1:
+Chaine ameliorante: sct de flot 27
+Modifications sur le graphe residuel:
+   s  a  b  c  d  t
+s [0, 31, 25, 0, 0, 0]
+a [0, 0, 20, 0, 12, 0]
+b [0, 0, 0, 30, 6, 0]
+c [27, 0, 0, 0, 0, 8]
+d [0, 0, 0, 0, 0, 11]
+t [0, 0, 0, 27, 0, 0]
+
+
+Le parcours en largeur :
+s
+ab ; Π(a) = s; Π(b) = s
+bd ; Π(d) = a
+dc ; Π(c) = b
+ct ; Π(t) = d
+
+
+Iteration 2:
+Chaine ameliorante: sadt de flot 11
+Modifications sur le graphe residuel:
+   s  a  b  c  d  t
+s [0, 20, 25, 0, 0, 0]
+a [11, 0, 20, 0, 1, 0]
+b [0, 0, 0, 30, 6, 0]
+c [27, 0, 0, 0, 0, 8]
+d [0, 11, 0, 0, 0, 0]
+t [0, 0, 0, 27, 11, 0]
+
+
+Le parcours en largeur :
+s
+ab ; Π(a) = s; Π(b) = s
+bd ; Π(d) = a
+dc ; Π(c) = b
+t ; Π(t) = c
+
+
+Iteration 3:
+Chaine ameliorante: sbct de flot 8
+Modifications sur le graphe residuel:
+   s  a  b  c  d  t
+s [0, 20, 17, 0, 0, 0]
+a [11, 0, 20, 0, 1, 0]
+b [8, 0, 0, 22, 6, 0]
+c [27, 0, 8, 0, 0, 0]
+d [0, 11, 0, 0, 0, 0]
+t [0, 0, 0, 35, 11, 0]
+
+
+Le parcours en largeur :
+s
+ab ; Π(a) = s; Π(b) = s
+bd ; Π(d) = a
+dc ; Π(c) = b
+Flot maximal: 46

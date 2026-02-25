@@ -1,0 +1,24 @@
+Matrice de Capacité:
+[0, 7, 4, 5, 0, 0, 0, 0]
+[0, 0, 0, 0, 1, 8, 0, 0]
+[0, 0, 0, 0, 0, 4, 3, 0]
+[0, 0, 0, 0, 0, 0, 2, 8]
+[0, 0, 0, 0, 0, 0, 0, 1]
+[0, 0, 0, 0, 0, 0, 0, 8]
+[0, 0, 0, 0, 0, 5, 0, 1]
+[0, 0, 0, 0, 0, 0, 0, 0]
+
+
+Matrice de coût:
+
+Source=0, Sink=-1
+
+Le parcours en largeur :
+s
+abc ; Π(a) = s; Π(b) = s; Π(c) = s
+bcde ; Π(d) = a; Π(e) = a
+cdef ; Π(f) = b
+deft ; Π(t) = c
+Flot max possible = 0
+
+Entrez flot désiré (1..0): 

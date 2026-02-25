@@ -1,0 +1,194 @@
+Matrice de Capacité:
+[0, 16, 3, 8, 0, 0, 0, 0, 0, 0]
+[0, 0, 3, 0, 3, 3, 4, 0, 0, 0]
+[0, 0, 0, 7, 0, 5, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 7, 0]
+[0, 0, 0, 0, 0, 0, 1, 8, 0, 0]
+[0, 0, 0, 0, 8, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 8]
+[0, 0, 0, 0, 0, 0, 3, 0, 4, 6]
+[0, 0, 0, 0, 0, 4, 0, 0, 0, 8]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+
+Le parcours en largeur :
+s
+abc ; Π(a) = s; Π(b) = s; Π(c) = s
+bcdef ; Π(d) = a; Π(e) = a; Π(f) = a
+defh ; Π(h) = c
+efhg ; Π(g) = d
+hgt ; Π(t) = f
+
+
+Iteration 1:
+Chaine ameliorante: saft de flot 4
+Modifications sur le graphe residuel:
+   s  a  b  c  d  e  f  g  h  t
+s [0, 12, 3, 8, 0, 0, 0, 0, 0, 0]
+a [4, 0, 3, 0, 3, 3, 0, 0, 0, 0]
+b [0, 0, 0, 7, 0, 5, 0, 0, 0, 0]
+c [0, 0, 0, 0, 0, 0, 0, 0, 7, 0]
+d [0, 0, 0, 0, 0, 0, 1, 8, 0, 0]
+e [0, 0, 0, 0, 8, 0, 0, 0, 0, 0]
+f [0, 4, 0, 0, 0, 0, 0, 0, 0, 4]
+g [0, 0, 0, 0, 0, 0, 3, 0, 4, 6]
+h [0, 0, 0, 0, 0, 4, 0, 0, 0, 8]
+t [0, 0, 0, 0, 0, 0, 4, 0, 0, 0]
+
+
+Le parcours en largeur :
+s
+abc ; Π(a) = s; Π(b) = s; Π(c) = s
+bcde ; Π(d) = a; Π(e) = a
+deh ; Π(h) = c
+ehfg ; Π(f) = d; Π(g) = d
+fgt ; Π(t) = h
+
+
+Iteration 2:
+Chaine ameliorante: scht de flot 7
+Modifications sur le graphe residuel:
+   s  a  b  c  d  e  f  g  h  t
+s [0, 12, 3, 1, 0, 0, 0, 0, 0, 0]
+a [4, 0, 3, 0, 3, 3, 0, 0, 0, 0]
+b [0, 0, 0, 7, 0, 5, 0, 0, 0, 0]
+c [7, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+d [0, 0, 0, 0, 0, 0, 1, 8, 0, 0]
+e [0, 0, 0, 0, 8, 0, 0, 0, 0, 0]
+f [0, 4, 0, 0, 0, 0, 0, 0, 0, 4]
+g [0, 0, 0, 0, 0, 0, 3, 0, 4, 6]
+h [0, 0, 0, 7, 0, 4, 0, 0, 0, 1]
+t [0, 0, 0, 0, 0, 0, 4, 0, 7, 0]
+
+
+Le parcours en largeur :
+s
+abc ; Π(a) = s; Π(b) = s; Π(c) = s
+bcde ; Π(d) = a; Π(e) = a
+efg ; Π(f) = d; Π(g) = d
+gt ; Π(t) = f
+
+
+Iteration 3:
+Chaine ameliorante: sadft de flot 1
+Modifications sur le graphe residuel:
+   s  a  b  c  d  e  f  g  h  t
+s [0, 11, 3, 1, 0, 0, 0, 0, 0, 0]
+a [5, 0, 3, 0, 2, 3, 0, 0, 0, 0]
+b [0, 0, 0, 7, 0, 5, 0, 0, 0, 0]
+c [7, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+d [0, 1, 0, 0, 0, 0, 0, 8, 0, 0]
+e [0, 0, 0, 0, 8, 0, 0, 0, 0, 0]
+f [0, 4, 0, 0, 1, 0, 0, 0, 0, 3]
+g [0, 0, 0, 0, 0, 0, 3, 0, 4, 6]
+h [0, 0, 0, 7, 0, 4, 0, 0, 0, 1]
+t [0, 0, 0, 0, 0, 0, 5, 0, 7, 0]
+
+
+Le parcours en largeur :
+s
+abc ; Π(a) = s; Π(b) = s; Π(c) = s
+bcde ; Π(d) = a; Π(e) = a
+eg ; Π(g) = d
+fht ; Π(t) = g
+
+
+Iteration 4:
+Chaine ameliorante: sadgt de flot 2
+Modifications sur le graphe residuel:
+   s  a  b  c  d  e  f  g  h  t
+s [0, 9, 3, 1, 0, 0, 0, 0, 0, 0]
+a [7, 0, 3, 0, 0, 3, 0, 0, 0, 0]
+b [0, 0, 0, 7, 0, 5, 0, 0, 0, 0]
+c [7, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+d [0, 3, 0, 0, 0, 0, 0, 6, 0, 0]
+e [0, 0, 0, 0, 8, 0, 0, 0, 0, 0]
+f [0, 4, 0, 0, 1, 0, 0, 0, 0, 3]
+g [0, 0, 0, 0, 2, 0, 3, 0, 4, 4]
+h [0, 0, 0, 7, 0, 4, 0, 0, 0, 1]
+t [0, 0, 0, 0, 0, 0, 5, 2, 7, 0]
+
+
+Le parcours en largeur :
+s
+abc ; Π(a) = s; Π(b) = s; Π(c) = s
+bce ; Π(e) = a
+d ; Π(d) = e
+g ; Π(g) = d
+fht ; Π(t) = g
+
+
+Iteration 5:
+Chaine ameliorante: saedgt de flot 3
+Modifications sur le graphe residuel:
+   s  a  b  c  d  e  f  g  h  t
+s [0, 6, 3, 1, 0, 0, 0, 0, 0, 0]
+a [10, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+b [0, 0, 0, 7, 0, 5, 0, 0, 0, 0]
+c [7, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+d [0, 3, 0, 0, 0, 3, 0, 3, 0, 0]
+e [0, 3, 0, 0, 5, 0, 0, 0, 0, 0]
+f [0, 4, 0, 0, 1, 0, 0, 0, 0, 3]
+g [0, 0, 0, 0, 5, 0, 3, 0, 4, 1]
+h [0, 0, 0, 7, 0, 4, 0, 0, 0, 1]
+t [0, 0, 0, 0, 0, 0, 5, 5, 7, 0]
+
+
+Le parcours en largeur :
+s
+abc ; Π(a) = s; Π(b) = s; Π(c) = s
+ce ; Π(e) = b
+d ; Π(d) = e
+g ; Π(g) = d
+fht ; Π(t) = g
+
+
+Iteration 6:
+Chaine ameliorante: sbedgt de flot 1
+Modifications sur le graphe residuel:
+   s  a  b  c  d  e  f  g  h  t
+s [0, 6, 2, 1, 0, 0, 0, 0, 0, 0]
+a [10, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+b [1, 0, 0, 7, 0, 4, 0, 0, 0, 0]
+c [7, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+d [0, 3, 0, 0, 0, 4, 0, 2, 0, 0]
+e [0, 3, 1, 0, 4, 0, 0, 0, 0, 0]
+f [0, 4, 0, 0, 1, 0, 0, 0, 0, 3]
+g [0, 0, 0, 0, 6, 0, 3, 0, 4, 0]
+h [0, 0, 0, 7, 0, 4, 0, 0, 0, 1]
+t [0, 0, 0, 0, 0, 0, 5, 6, 7, 0]
+
+
+Le parcours en largeur :
+s
+abc ; Π(a) = s; Π(b) = s; Π(c) = s
+ce ; Π(e) = b
+d ; Π(d) = e
+g ; Π(g) = d
+fh ; Π(f) = g; Π(h) = g
+ht ; Π(t) = f
+
+
+Iteration 7:
+Chaine ameliorante: sbedgft de flot 2
+Modifications sur le graphe residuel:
+   s  a  b  c  d  e  f  g  h  t
+s [0, 6, 0, 1, 0, 0, 0, 0, 0, 0]
+a [10, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+b [3, 0, 0, 7, 0, 2, 0, 0, 0, 0]
+c [7, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+d [0, 3, 0, 0, 0, 6, 0, 0, 0, 0]
+e [0, 3, 3, 0, 2, 0, 0, 0, 0, 0]
+f [0, 4, 0, 0, 1, 0, 0, 2, 0, 1]
+g [0, 0, 0, 0, 8, 0, 1, 0, 4, 0]
+h [0, 0, 0, 7, 0, 4, 0, 0, 0, 1]
+t [0, 0, 0, 0, 0, 0, 7, 6, 7, 0]
+
+
+Le parcours en largeur :
+s
+ac ; Π(a) = s; Π(c) = s
+cb ; Π(b) = a
+e ; Π(e) = b
+d ; Π(d) = e
+Flot maximal: 20

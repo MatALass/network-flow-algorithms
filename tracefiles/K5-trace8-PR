@@ -1,0 +1,427 @@
+Matrice de Capacité:
+[0, 31, 25, 27, 0, 0]
+[0, 0, 20, 0, 12, 0]
+[0, 0, 0, 30, 6, 0]
+[0, 0, 0, 0, 0, 35]
+[0, 0, 0, 0, 0, 11]
+[0, 0, 0, 0, 0, 0]
+
+Initial push: s -> a : 31
+Initial push: s -> b : 25
+Initial push: s -> c : 27
+--- Après initialisation ---
+Hauteurs : {'s': 6, 'a': 0, 'b': 0, 'c': 0, 'd': 0, 't': 0}
+Excès     : {'s': -83, 'a': 31, 'b': 25, 'c': 27, 'd': 0, 't': 0}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 25 27  0  0
+a -31  0  0  0  0  0
+b -25  0  0  0  0  0
+c -27  0  0  0  0  0
+d  0  0  0  0  0  0
+t  0  0  0  0  0  0
+
+Réétiqueter a à 1
+--- Après RELABEL ---
+Hauteurs : {'s': 6, 'a': 1, 'b': 0, 'c': 0, 'd': 0, 't': 0}
+Excès     : {'s': -83, 'a': 31, 'b': 25, 'c': 27, 'd': 0, 't': 0}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 25 27  0  0
+a -31  0  0  0  0  0
+b -25  0  0  0  0  0
+c -27  0  0  0  0  0
+d  0  0  0  0  0  0
+t  0  0  0  0  0  0
+
+Pousser 20 de a à b
+--- Après PUSH ---
+Hauteurs : {'s': 6, 'a': 1, 'b': 0, 'c': 0, 'd': 0, 't': 0}
+Excès     : {'s': -83, 'a': 11, 'b': 45, 'c': 27, 'd': 0, 't': 0}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 25 27  0  0
+a -31  0 20  0  0  0
+b -25 -20  0  0  0  0
+c -27  0  0  0  0  0
+d  0  0  0  0  0  0
+t  0  0  0  0  0  0
+
+Pousser 11 de a à d
+--- Après PUSH ---
+Hauteurs : {'s': 6, 'a': 1, 'b': 0, 'c': 0, 'd': 0, 't': 0}
+Excès     : {'s': -83, 'a': 0, 'b': 45, 'c': 27, 'd': 11, 't': 0}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 25 27  0  0
+a -31  0 20  0 11  0
+b -25 -20  0  0  0  0
+c -27  0  0  0  0  0
+d  0 -11  0  0  0  0
+t  0  0  0  0  0  0
+
+Réétiqueter b à 1
+--- Après RELABEL ---
+Hauteurs : {'s': 6, 'a': 1, 'b': 1, 'c': 0, 'd': 0, 't': 0}
+Excès     : {'s': -83, 'a': 0, 'b': 45, 'c': 27, 'd': 11, 't': 0}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 25 27  0  0
+a -31  0 20  0 11  0
+b -25 -20  0  0  0  0
+c -27  0  0  0  0  0
+d  0 -11  0  0  0  0
+t  0  0  0  0  0  0
+
+Pousser 30 de b à c
+--- Après PUSH ---
+Hauteurs : {'s': 6, 'a': 1, 'b': 1, 'c': 0, 'd': 0, 't': 0}
+Excès     : {'s': -83, 'a': 0, 'b': 15, 'c': 57, 'd': 11, 't': 0}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 25 27  0  0
+a -31  0 20  0 11  0
+b -25 -20  0 30  0  0
+c -27  0 -30  0  0  0
+d  0 -11  0  0  0  0
+t  0  0  0  0  0  0
+
+Pousser 6 de b à d
+--- Après PUSH ---
+Hauteurs : {'s': 6, 'a': 1, 'b': 1, 'c': 0, 'd': 0, 't': 0}
+Excès     : {'s': -83, 'a': 0, 'b': 9, 'c': 57, 'd': 17, 't': 0}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 25 27  0  0
+a -31  0 20  0 11  0
+b -25 -20  0 30  6  0
+c -27  0 -30  0  0  0
+d  0 -11 -6  0  0  0
+t  0  0  0  0  0  0
+
+Réétiqueter b à 2
+--- Après RELABEL ---
+Hauteurs : {'s': 6, 'a': 1, 'b': 2, 'c': 0, 'd': 0, 't': 0}
+Excès     : {'s': -83, 'a': 0, 'b': 9, 'c': 57, 'd': 17, 't': 0}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 25 27  0  0
+a -31  0 20  0 11  0
+b -25 -20  0 30  6  0
+c -27  0 -30  0  0  0
+d  0 -11 -6  0  0  0
+t  0  0  0  0  0  0
+
+Pousser 9 de b à a
+--- Après PUSH ---
+Hauteurs : {'s': 6, 'a': 1, 'b': 2, 'c': 0, 'd': 0, 't': 0}
+Excès     : {'s': -83, 'a': 9, 'b': 0, 'c': 57, 'd': 17, 't': 0}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 25 27  0  0
+a -31  0 11  0 11  0
+b -25 -11  0 30  6  0
+c -27  0 -30  0  0  0
+d  0 -11 -6  0  0  0
+t  0  0  0  0  0  0
+
+Pousser 1 de a à d
+--- Après PUSH ---
+Hauteurs : {'s': 6, 'a': 1, 'b': 2, 'c': 0, 'd': 0, 't': 0}
+Excès     : {'s': -83, 'a': 8, 'b': 0, 'c': 57, 'd': 18, 't': 0}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 25 27  0  0
+a -31  0 11  0 12  0
+b -25 -11  0 30  6  0
+c -27  0 -30  0  0  0
+d  0 -12 -6  0  0  0
+t  0  0  0  0  0  0
+
+Réétiqueter a à 3
+--- Après RELABEL ---
+Hauteurs : {'s': 6, 'a': 3, 'b': 2, 'c': 0, 'd': 0, 't': 0}
+Excès     : {'s': -83, 'a': 8, 'b': 0, 'c': 57, 'd': 18, 't': 0}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 25 27  0  0
+a -31  0 11  0 12  0
+b -25 -11  0 30  6  0
+c -27  0 -30  0  0  0
+d  0 -12 -6  0  0  0
+t  0  0  0  0  0  0
+
+Pousser 8 de a à b
+--- Après PUSH ---
+Hauteurs : {'s': 6, 'a': 3, 'b': 2, 'c': 0, 'd': 0, 't': 0}
+Excès     : {'s': -83, 'a': 0, 'b': 8, 'c': 57, 'd': 18, 't': 0}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 25 27  0  0
+a -31  0 19  0 12  0
+b -25 -19  0 30  6  0
+c -27  0 -30  0  0  0
+d  0 -12 -6  0  0  0
+t  0  0  0  0  0  0
+
+Réétiqueter b à 4
+--- Après RELABEL ---
+Hauteurs : {'s': 6, 'a': 3, 'b': 4, 'c': 0, 'd': 0, 't': 0}
+Excès     : {'s': -83, 'a': 0, 'b': 8, 'c': 57, 'd': 18, 't': 0}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 25 27  0  0
+a -31  0 19  0 12  0
+b -25 -19  0 30  6  0
+c -27  0 -30  0  0  0
+d  0 -12 -6  0  0  0
+t  0  0  0  0  0  0
+
+Pousser 8 de b à a
+--- Après PUSH ---
+Hauteurs : {'s': 6, 'a': 3, 'b': 4, 'c': 0, 'd': 0, 't': 0}
+Excès     : {'s': -83, 'a': 8, 'b': 0, 'c': 57, 'd': 18, 't': 0}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 25 27  0  0
+a -31  0 11  0 12  0
+b -25 -11  0 30  6  0
+c -27  0 -30  0  0  0
+d  0 -12 -6  0  0  0
+t  0  0  0  0  0  0
+
+Réétiqueter a à 5
+--- Après RELABEL ---
+Hauteurs : {'s': 6, 'a': 5, 'b': 4, 'c': 0, 'd': 0, 't': 0}
+Excès     : {'s': -83, 'a': 8, 'b': 0, 'c': 57, 'd': 18, 't': 0}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 25 27  0  0
+a -31  0 11  0 12  0
+b -25 -11  0 30  6  0
+c -27  0 -30  0  0  0
+d  0 -12 -6  0  0  0
+t  0  0  0  0  0  0
+
+Pousser 8 de a à b
+--- Après PUSH ---
+Hauteurs : {'s': 6, 'a': 5, 'b': 4, 'c': 0, 'd': 0, 't': 0}
+Excès     : {'s': -83, 'a': 0, 'b': 8, 'c': 57, 'd': 18, 't': 0}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 25 27  0  0
+a -31  0 19  0 12  0
+b -25 -19  0 30  6  0
+c -27  0 -30  0  0  0
+d  0 -12 -6  0  0  0
+t  0  0  0  0  0  0
+
+Réétiqueter b à 6
+--- Après RELABEL ---
+Hauteurs : {'s': 6, 'a': 5, 'b': 6, 'c': 0, 'd': 0, 't': 0}
+Excès     : {'s': -83, 'a': 0, 'b': 8, 'c': 57, 'd': 18, 't': 0}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 25 27  0  0
+a -31  0 19  0 12  0
+b -25 -19  0 30  6  0
+c -27  0 -30  0  0  0
+d  0 -12 -6  0  0  0
+t  0  0  0  0  0  0
+
+Pousser 8 de b à a
+--- Après PUSH ---
+Hauteurs : {'s': 6, 'a': 5, 'b': 6, 'c': 0, 'd': 0, 't': 0}
+Excès     : {'s': -83, 'a': 8, 'b': 0, 'c': 57, 'd': 18, 't': 0}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 25 27  0  0
+a -31  0 11  0 12  0
+b -25 -11  0 30  6  0
+c -27  0 -30  0  0  0
+d  0 -12 -6  0  0  0
+t  0  0  0  0  0  0
+
+Réétiqueter a à 7
+--- Après RELABEL ---
+Hauteurs : {'s': 6, 'a': 7, 'b': 6, 'c': 0, 'd': 0, 't': 0}
+Excès     : {'s': -83, 'a': 8, 'b': 0, 'c': 57, 'd': 18, 't': 0}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 25 27  0  0
+a -31  0 11  0 12  0
+b -25 -11  0 30  6  0
+c -27  0 -30  0  0  0
+d  0 -12 -6  0  0  0
+t  0  0  0  0  0  0
+
+Pousser 8 de a à b
+--- Après PUSH ---
+Hauteurs : {'s': 6, 'a': 7, 'b': 6, 'c': 0, 'd': 0, 't': 0}
+Excès     : {'s': -83, 'a': 0, 'b': 8, 'c': 57, 'd': 18, 't': 0}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 25 27  0  0
+a -31  0 19  0 12  0
+b -25 -19  0 30  6  0
+c -27  0 -30  0  0  0
+d  0 -12 -6  0  0  0
+t  0  0  0  0  0  0
+
+Réétiqueter b à 7
+--- Après RELABEL ---
+Hauteurs : {'s': 6, 'a': 7, 'b': 7, 'c': 0, 'd': 0, 't': 0}
+Excès     : {'s': -83, 'a': 0, 'b': 8, 'c': 57, 'd': 18, 't': 0}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 25 27  0  0
+a -31  0 19  0 12  0
+b -25 -19  0 30  6  0
+c -27  0 -30  0  0  0
+d  0 -12 -6  0  0  0
+t  0  0  0  0  0  0
+
+Pousser 8 de b à s
+--- Après PUSH ---
+Hauteurs : {'s': 6, 'a': 7, 'b': 7, 'c': 0, 'd': 0, 't': 0}
+Excès     : {'s': -75, 'a': 0, 'b': 0, 'c': 57, 'd': 18, 't': 0}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 17 27  0  0
+a -31  0 19  0 12  0
+b -17 -19  0 30  6  0
+c -27  0 -30  0  0  0
+d  0 -12 -6  0  0  0
+t  0  0  0  0  0  0
+
+Réétiqueter c à 1
+--- Après RELABEL ---
+Hauteurs : {'s': 6, 'a': 7, 'b': 7, 'c': 1, 'd': 0, 't': 0}
+Excès     : {'s': -75, 'a': 0, 'b': 0, 'c': 57, 'd': 18, 't': 0}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 17 27  0  0
+a -31  0 19  0 12  0
+b -17 -19  0 30  6  0
+c -27  0 -30  0  0  0
+d  0 -12 -6  0  0  0
+t  0  0  0  0  0  0
+
+Pousser 35 de c à t
+--- Après PUSH ---
+Hauteurs : {'s': 6, 'a': 7, 'b': 7, 'c': 1, 'd': 0, 't': 0}
+Excès     : {'s': -75, 'a': 0, 'b': 0, 'c': 22, 'd': 18, 't': 35}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 17 27  0  0
+a -31  0 19  0 12  0
+b -17 -19  0 30  6  0
+c -27  0 -30  0  0 35
+d  0 -12 -6  0  0  0
+t  0  0  0 -35  0  0
+
+Réétiqueter c à 7
+--- Après RELABEL ---
+Hauteurs : {'s': 6, 'a': 7, 'b': 7, 'c': 7, 'd': 0, 't': 0}
+Excès     : {'s': -75, 'a': 0, 'b': 0, 'c': 22, 'd': 18, 't': 35}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 17 27  0  0
+a -31  0 19  0 12  0
+b -17 -19  0 30  6  0
+c -27  0 -30  0  0 35
+d  0 -12 -6  0  0  0
+t  0  0  0 -35  0  0
+
+Pousser 22 de c à s
+--- Après PUSH ---
+Hauteurs : {'s': 6, 'a': 7, 'b': 7, 'c': 7, 'd': 0, 't': 0}
+Excès     : {'s': -53, 'a': 0, 'b': 0, 'c': 0, 'd': 18, 't': 35}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 17  5  0  0
+a -31  0 19  0 12  0
+b -17 -19  0 30  6  0
+c -5  0 -30  0  0 35
+d  0 -12 -6  0  0  0
+t  0  0  0 -35  0  0
+
+Réétiqueter d à 1
+--- Après RELABEL ---
+Hauteurs : {'s': 6, 'a': 7, 'b': 7, 'c': 7, 'd': 1, 't': 0}
+Excès     : {'s': -53, 'a': 0, 'b': 0, 'c': 0, 'd': 18, 't': 35}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 17  5  0  0
+a -31  0 19  0 12  0
+b -17 -19  0 30  6  0
+c -5  0 -30  0  0 35
+d  0 -12 -6  0  0  0
+t  0  0  0 -35  0  0
+
+Pousser 11 de d à t
+--- Après PUSH ---
+Hauteurs : {'s': 6, 'a': 7, 'b': 7, 'c': 7, 'd': 1, 't': 0}
+Excès     : {'s': -53, 'a': 0, 'b': 0, 'c': 0, 'd': 7, 't': 46}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 17  5  0  0
+a -31  0 19  0 12  0
+b -17 -19  0 30  6  0
+c -5  0 -30  0  0 35
+d  0 -12 -6  0  0 11
+t  0  0  0 -35 -11  0
+
+Réétiqueter d à 8
+--- Après RELABEL ---
+Hauteurs : {'s': 6, 'a': 7, 'b': 7, 'c': 7, 'd': 8, 't': 0}
+Excès     : {'s': -53, 'a': 0, 'b': 0, 'c': 0, 'd': 7, 't': 46}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 17  5  0  0
+a -31  0 19  0 12  0
+b -17 -19  0 30  6  0
+c -5  0 -30  0  0 35
+d  0 -12 -6  0  0 11
+t  0  0  0 -35 -11  0
+
+Pousser 7 de d à a
+--- Après PUSH ---
+Hauteurs : {'s': 6, 'a': 7, 'b': 7, 'c': 7, 'd': 8, 't': 0}
+Excès     : {'s': -53, 'a': 7, 'b': 0, 'c': 0, 'd': 0, 't': 46}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 31 17  5  0  0
+a -31  0 19  0  5  0
+b -17 -19  0 30  6  0
+c -5  0 -30  0  0 35
+d  0 -5 -6  0  0 11
+t  0  0  0 -35 -11  0
+
+Pousser 7 de a à s
+--- Après PUSH ---
+Hauteurs : {'s': 6, 'a': 7, 'b': 7, 'c': 7, 'd': 8, 't': 0}
+Excès     : {'s': -46, 'a': 0, 'b': 0, 'c': 0, 'd': 0, 't': 46}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 24 17  5  0  0
+a -24  0 19  0  5  0
+b -17 -19  0 30  6  0
+c -5  0 -30  0  0 35
+d  0 -5 -6  0  0 11
+t  0  0  0 -35 -11  0
+
+--- État final ---
+Hauteurs : {'s': 6, 'a': 7, 'b': 7, 'c': 7, 'd': 8, 't': 0}
+Excès     : {'s': -46, 'a': 0, 'b': 0, 'c': 0, 'd': 0, 't': 46}
+Matrice de Flot :
+   s  a  b  c  d  t
+s  0 24 17  5  0  0
+a -24  0 19  0  5  0
+b -17 -19  0 30  6  0
+c -5  0 -30  0  0 35
+d  0 -5 -6  0  0 11
+t  0  0  0 -35 -11  0
+
+
+Flot maximal (Push-Relabel) : 46

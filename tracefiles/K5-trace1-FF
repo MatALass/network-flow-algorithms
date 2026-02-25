@@ -1,0 +1,128 @@
+Matrice de Capacité:
+[0, 9, 5, 7, 0, 0, 0, 0]
+[0, 0, 6, 0, 6, 0, 0, 0]
+[0, 0, 0, 0, 0, 7, 0, 0]
+[0, 0, 0, 0, 0, 2, 8, 0]
+[0, 0, 3, 0, 0, 0, 0, 8]
+[0, 0, 0, 0, 0, 0, 0, 10]
+[0, 0, 0, 0, 0, 3, 0, 5]
+[0, 0, 0, 0, 0, 0, 0, 0]
+
+
+Le parcours en largeur :
+s
+abc ; Π(a) = s; Π(b) = s; Π(c) = s
+bcd ; Π(d) = a
+cde ; Π(e) = b
+def ; Π(f) = c
+eft ; Π(t) = d
+
+
+Iteration 1:
+Chaine ameliorante: sadt de flot 6
+Modifications sur le graphe residuel:
+   s  a  b  c  d  e  f  t
+s [0, 3, 5, 7, 0, 0, 0, 0]
+a [6, 0, 6, 0, 0, 0, 0, 0]
+b [0, 0, 0, 0, 0, 7, 0, 0]
+c [0, 0, 0, 0, 0, 2, 8, 0]
+d [0, 6, 3, 0, 0, 0, 0, 2]
+e [0, 0, 0, 0, 0, 0, 0, 10]
+f [0, 0, 0, 0, 0, 3, 0, 5]
+t [0, 0, 0, 0, 6, 0, 0, 0]
+
+
+Le parcours en largeur :
+s
+abc ; Π(a) = s; Π(b) = s; Π(c) = s
+ce ; Π(e) = b
+ef ; Π(f) = c
+ft ; Π(t) = e
+
+
+Iteration 2:
+Chaine ameliorante: sbet de flot 5
+Modifications sur le graphe residuel:
+   s  a  b  c  d  e  f  t
+s [0, 3, 0, 7, 0, 0, 0, 0]
+a [6, 0, 6, 0, 0, 0, 0, 0]
+b [5, 0, 0, 0, 0, 2, 0, 0]
+c [0, 0, 0, 0, 0, 2, 8, 0]
+d [0, 6, 3, 0, 0, 0, 0, 2]
+e [0, 0, 5, 0, 0, 0, 0, 5]
+f [0, 0, 0, 0, 0, 3, 0, 5]
+t [0, 0, 0, 0, 6, 5, 0, 0]
+
+
+Le parcours en largeur :
+s
+ac ; Π(a) = s; Π(c) = s
+cb ; Π(b) = a
+bef ; Π(e) = c; Π(f) = c
+ft ; Π(t) = e
+
+
+Iteration 3:
+Chaine ameliorante: scet de flot 2
+Modifications sur le graphe residuel:
+   s  a  b  c  d  e  f  t
+s [0, 3, 0, 5, 0, 0, 0, 0]
+a [6, 0, 6, 0, 0, 0, 0, 0]
+b [5, 0, 0, 0, 0, 2, 0, 0]
+c [2, 0, 0, 0, 0, 0, 8, 0]
+d [0, 6, 3, 0, 0, 0, 0, 2]
+e [0, 0, 5, 2, 0, 0, 0, 3]
+f [0, 0, 0, 0, 0, 3, 0, 5]
+t [0, 0, 0, 0, 6, 7, 0, 0]
+
+
+Le parcours en largeur :
+s
+ac ; Π(a) = s; Π(c) = s
+cb ; Π(b) = a
+bf ; Π(f) = c
+fe ; Π(e) = b
+et ; Π(t) = f
+
+
+Iteration 4:
+Chaine ameliorante: scft de flot 5
+Modifications sur le graphe residuel:
+   s  a  b  c  d  e  f  t
+s [0, 3, 0, 0, 0, 0, 0, 0]
+a [6, 0, 6, 0, 0, 0, 0, 0]
+b [5, 0, 0, 0, 0, 2, 0, 0]
+c [7, 0, 0, 0, 0, 0, 3, 0]
+d [0, 6, 3, 0, 0, 0, 0, 2]
+e [0, 0, 5, 2, 0, 0, 0, 3]
+f [0, 0, 0, 5, 0, 3, 0, 0]
+t [0, 0, 0, 0, 6, 7, 5, 0]
+
+
+Le parcours en largeur :
+s
+a ; Π(a) = s
+b ; Π(b) = a
+e ; Π(e) = b
+ct ; Π(t) = e
+
+
+Iteration 5:
+Chaine ameliorante: sabet de flot 2
+Modifications sur le graphe residuel:
+   s  a  b  c  d  e  f  t
+s [0, 1, 0, 0, 0, 0, 0, 0]
+a [8, 0, 4, 0, 0, 0, 0, 0]
+b [5, 2, 0, 0, 0, 0, 0, 0]
+c [7, 0, 0, 0, 0, 0, 3, 0]
+d [0, 6, 3, 0, 0, 0, 0, 2]
+e [0, 0, 7, 2, 0, 0, 0, 1]
+f [0, 0, 0, 5, 0, 3, 0, 0]
+t [0, 0, 0, 0, 6, 9, 5, 0]
+
+
+Le parcours en largeur :
+s
+a ; Π(a) = s
+b ; Π(b) = a
+Flot maximal: 20

@@ -1,0 +1,52 @@
+Matrice de Capacité:
+[0, 15, 8, 0, 0, 0]
+[0, 0, 0, 4, 0, 0]
+[0, 0, 0, 15, 10, 0]
+[0, 0, 0, 0, 5, 20]
+[0, 0, 0, 4, 0, 15]
+[0, 0, 0, 0, 0, 0]
+
+
+Le parcours en largeur :
+s
+ab ; Π(a) = s; Π(b) = s
+bc ; Π(c) = a
+cd ; Π(d) = b
+dt ; Π(t) = c
+
+
+Iteration 1:
+Chaine ameliorante: sact de flot 4
+Modifications sur le graphe residuel:
+   s  a  b  c  d  t
+s [0, 11, 8, 0, 0, 0]
+a [4, 0, 0, 0, 0, 0]
+b [0, 0, 0, 15, 10, 0]
+c [0, 4, 0, 0, 5, 16]
+d [0, 0, 0, 4, 0, 15]
+t [0, 0, 0, 4, 0, 0]
+
+
+Le parcours en largeur :
+s
+ab ; Π(a) = s; Π(b) = s
+cd ; Π(c) = b; Π(d) = b
+dt ; Π(t) = c
+
+
+Iteration 2:
+Chaine ameliorante: sbct de flot 8
+Modifications sur le graphe residuel:
+   s  a  b  c  d  t
+s [0, 11, 0, 0, 0, 0]
+a [4, 0, 0, 0, 0, 0]
+b [8, 0, 0, 7, 10, 0]
+c [0, 4, 8, 0, 5, 8]
+d [0, 0, 0, 4, 0, 15]
+t [0, 0, 0, 12, 0, 0]
+
+
+Le parcours en largeur :
+s
+a ; Π(a) = s
+Flot maximal: 12
