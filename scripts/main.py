@@ -1,7 +1,7 @@
 import algorithms.MaximalFlow as MaximalFlow
 import algorithms.MinimalCost as MinimalCost
 import algorithms.pushRelabel as pushRelabel
-import GUI
+import network_flow_algorithms.gui.app as app
 
 def main():
     while True:
@@ -19,7 +19,7 @@ def main():
             break
         elif choice == "gui":
             print("Lancement de l'interface graphique...")
-            GUI.root.mainloop()
+            app.root.mainloop()
             break
         elif choice not in {"ff", "cm", "pr"}:
             print("Choix invalide. Veuillez réessayer.")
